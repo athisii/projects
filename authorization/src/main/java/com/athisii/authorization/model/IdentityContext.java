@@ -3,6 +3,8 @@ package com.athisii.authorization.model;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 import java.util.List;
 
@@ -14,6 +16,8 @@ import java.util.List;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Component
+@RequestScope
 public class IdentityContext {
     Long id;
     String userId;

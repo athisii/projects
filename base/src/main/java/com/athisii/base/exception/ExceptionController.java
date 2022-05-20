@@ -1,6 +1,6 @@
 package com.athisii.base.exception;
 
-import com.athisii.base.dto.ResponseDTO;
+import com.athisii.base.model.ResponseDTO;
 import org.slf4j.Logger;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpHeaders;
@@ -15,7 +15,6 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author athisii
@@ -35,13 +34,13 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-        List<String> errorMessageList = ex.getBindingResult().getAllErrors().stream().map((e) -> {
+        List<String> errorMessageList = ex.getBindingResult().getAllErrors().stream().map(e -> {
             if (e instanceof FieldError fieldError) {
                 return messageSource.getMessage(fieldError, null);
             } else {
                 return e.getDefaultMessage();
             }
-        }).collect(Collectors.toList());
+        }).toList();
 
         ResponseDTO<String> exceptionResponse = new ResponseDTO<>(false,
                 "Validation Failed: " + String.join(",", errorMessageList),

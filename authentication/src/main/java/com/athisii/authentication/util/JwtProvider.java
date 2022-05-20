@@ -42,8 +42,8 @@ public class JwtProvider {
                 .withIssuedAt(new Date())
                 .withExpiresAt(new Date(System.currentTimeMillis() + ((TokenType.ACCESS_TOKEN.equals(type) ? accessTokenValidity : refreshTokenValidity) * 24 * 60 * 60 * 1000)))
                 .withClaim(PERMISSIONS, getPermissionsFromAppUser(appUser))
-                .withClaim("id", appUser.getUser().getId())
-                .withClaim("name", UtilityMethods.createFullName(appUser.getUser().getFirstName(), appUser.getUser().getLastName()))
+                .withClaim("id", appUser.user().getId())
+                .withClaim("name", UtilityMethods.createFullName(appUser.user().getFirstName(), appUser.user().getLastName()))
                 .sign(algorithm);
     }
 

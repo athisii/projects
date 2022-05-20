@@ -30,8 +30,10 @@ public class User extends AuditModel {
     String userId;
 
     @JsonIgnore
+    @Column(nullable = false)
     String password;
 
+    @Column(unique = true, nullable = false)
     String email;
     String profileImageUrl;
 }

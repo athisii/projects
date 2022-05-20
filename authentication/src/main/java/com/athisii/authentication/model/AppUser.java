@@ -13,18 +13,7 @@ import java.util.List;
  */
 
 
-public class AppUser implements UserDetails {
-    private final User user;
-    private final List<GrantedAuthority> authorities;
-
-    public AppUser(User user, List<GrantedAuthority> authorities) {
-        this.user = user;
-        this.authorities = authorities;
-    }
-
-    public User getUser() {
-        return this.user;
-    }
+public record AppUser(User user, List<GrantedAuthority> authorities) implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -60,4 +49,5 @@ public class AppUser implements UserDetails {
     public boolean isEnabled() {
         return user.isActive();
     }
+
 }

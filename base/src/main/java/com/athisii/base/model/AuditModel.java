@@ -7,6 +7,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
@@ -17,13 +18,13 @@ import java.util.Objects;
  */
 @MappedSuperclass
 @EntityListeners({AuditListener.class})
-public class AuditModel {
+public class AuditModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private boolean active = true;
+    private boolean active = false;
     @JsonIgnore
     private boolean deleted = false;
 

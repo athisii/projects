@@ -1,7 +1,6 @@
 package com.athisii.authentication.model;
 
 import com.athisii.base.model.AuditModel;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -33,7 +32,7 @@ public class User extends AuditModel {
     @JsonIgnore
     String password;
 
-    @Column(unique = false)
+    @Column(unique = true)
     String email;
     String profileImageUrl;
 }

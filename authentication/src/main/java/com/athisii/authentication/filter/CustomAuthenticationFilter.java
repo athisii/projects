@@ -5,7 +5,7 @@ import com.athisii.authentication.dto.LoginSuccessDto;
 import com.athisii.authentication.enums.TokenType;
 import com.athisii.authentication.model.AppUser;
 import com.athisii.authentication.util.JwtProvider;
-import com.athisii.base.dto.ResponseDTO;
+import com.athisii.base.model.ResponseDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;

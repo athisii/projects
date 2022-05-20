@@ -1,8 +1,10 @@
 package com.athisii.authorization.model;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
 /**
  * @author athisii
@@ -13,10 +15,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class ResponseDTO<T> {
-    private Boolean status = true;
-    private String message;
-    private T data;
+    Boolean status = false;
+    String message;
+    T data;
 
     public ResponseDTO(Boolean status, String message) {
         this.status = status;

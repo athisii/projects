@@ -46,6 +46,7 @@ public class Bootstrap implements ApplicationRunner {
         user.setGender('M');
         user.setPassword(passwordEncoder.encode("password"));
         user.setEmail("email@athisii.com");
+        user.setActive(true);
         userRepo.save(user);
 
         List<Action> actions = List.of(

@@ -7,7 +7,6 @@ import com.athisii.authentication.model.UserRoleMapping;
 import com.athisii.authentication.repository.RoleRepo;
 import com.athisii.authentication.repository.UserRepo;
 import com.athisii.authentication.repository.UserRoleMappingRepo;
-import com.athisii.base.model.AuditModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,7 +15,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Optional;

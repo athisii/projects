@@ -25,6 +25,6 @@ public class UserController {
         log.info("Id: " + identityContext.getId());
         log.info("userId: " + identityContext.getUserId());
         log.info("Name: " + identityContext.getFullName());
-        return "Successful";
+        return "Hello, " + identityContext.getFullName() + "!";
     }
 }

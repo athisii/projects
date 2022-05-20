@@ -1,0 +1,27 @@
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost/user_mgmt
+#    username: athisii
+#    password: athisii
+#  jpa:
+#    show-sql: true
+#    hibernate.ddl-auto: update
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        dialect: org.hibernate.dialect.MySQL8Dialect
+
+
+#token
+jwt:
+  secret: ${SECRET}
+  #  validity in days
+#  access:
+#    token:
+#      validity: 3
+#    refresh:
+#      token:
+#        validity: 30
+
+#server:
+#  port: 5000
